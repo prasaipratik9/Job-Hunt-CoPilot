@@ -212,6 +212,9 @@ tempCodeRunnerFile.py
 # Marimo
 marimo/_static/
 marimo/_lsp/
+
+# Personal data - never commit
+*.txt
 __marimo__/
 
 # Streamlit
