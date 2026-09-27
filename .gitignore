@@ -214,7 +214,7 @@ marimo/_static/
 marimo/_lsp/
 
 # Personal data - never commit
-"Pratik Prasai.txt"
+Pratik Prasai.txt
 job_posting*.txt
 __marimo__/
 
