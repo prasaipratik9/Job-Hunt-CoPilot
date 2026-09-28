@@ -4,25 +4,25 @@
 
 \## Research
 
-\- \[x] Landscape research on AI job-matching approaches (via /office-hours)
+\- \[✅] Landscape research on AI job-matching approaches (via /office-hours)
 
-\- \[x] Evaluated Sequential Chain vs Step Functions vs Event-Driven approaches
+\- \[✅] Evaluated Sequential Chain vs Step Functions vs Event-Driven approaches
 
 
 
 \## Plan
 
-\- \[x] Design approved: Approach A, staged pipeline (extract → match → score → draft)
+\- \[✅] Design approved: Approach A, staged pipeline (extract → match → score → draft)
 
-\- \[x] Constraints set: AWS Bedrock, 3-week timebox, $20 budget alarm, API key auth
+\- \[✅] Constraints set: AWS Bedrock, 3-week timebox, $10 budget alarm, API key auth
 
 
 
 \## Implement
 
-\- \[x] Days 1-2: Python basics, first script (resume\_chunker.py)
+\- \[✅] Days 1-2: Python recap, first script (resume\_chunker.py)
 
-\- \[ ] Days 3-4: First Bedrock call + AWS Budget alarm
+\- \[✅] Days 3-4: First Bedrock call + AWS Budget alarm
 
 \- \[ ] Days 5-7: Staged pipeline (extract\_requirements, match\_resume, score\_fit, draft\_materials)
 
