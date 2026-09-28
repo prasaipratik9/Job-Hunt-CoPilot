@@ -24,7 +24,13 @@
 
 \- \[✅] Days 3-4: First Bedrock call + AWS Budget alarm
 
-\- \[ ] Days 5-7: Staged pipeline (extract\_requirements, match\_resume, score\_fit, draft\_materials)
+\- \[✅ ] Days 5-7 Stage 1: extract\_requirements
+
+\- \[ ] Days 5-7 Stage 2: match\_resume() (embeddings, fallback to keyword match by Day 7)
+
+\- \[ ] Days 5-7 Stage 3: score\_fit()
+
+\- \[ ] Days 5-7 Stage 4: draft\_materials()
 
 \- \[ ] Days 8-10: Deploy to AWS (Lambda, API Gateway, IAM, API key)
 

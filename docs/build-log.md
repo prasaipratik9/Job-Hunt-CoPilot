@@ -58,15 +58,57 @@
 
 
 
+\---------------------------------------------------------------------------------------------------------------------------
+
+
+
+\## \[2026-09-28] - Day 5
+
+
+
+\*\*Shipped:\*\*
+
+\- Wrote extract\_requirements.py, Stage 1 of the pipeline: pasted job posting in, list of requirements tagged must-have or nice-to-have out
+
+\- Prompt iterated from 16 noisy items (job title, perks, location included) to clean, specific, source-traceable lists
+
+\- Switched extraction model from Nova Micro to Nova Lite, which follows multi-rule prompts more reliably
+
+\- Tested on two very different postings (AI/MCP role and graduate program) plus their Employer questions sections
+
+
+
+\*\*Stuck / broke:\*\*
+
+\- Adding Employer questions rules made Micro drop the whole posting body
+
+\- Example in my own prompt (AWS DevOps) leaked into the output for a posting that never mentioned it
+
+\- Stricter prompt then dropped some questionnaire skills (TDD, MVC), accepted for v1
+
+
+
+\*\*Learned:\*\*
+
+\- Small models need concrete examples in the prompt, and a bigger model can fix what wording tweaks cannot
+
+\- Examples in a prompt can be copied into the output, so use throwaway examples and forbid invented items
+
+\- Every prompt change needs a retest on earlier postings, since fixing one part can break another
+
+\- Never trust model output: Model output is validated before use (code fences stripped, JSON checked, bad tags defaulted- Each function does one job (load, call, parse, orchestrate), which lets later stages import extract\_requirements()
+
+\- Temperature 0.0 gives near-identical output on the same input, so prompt changes stay comparable
+
+\- Check every extracted item against the source posting yourself
+
+
+
 \*\*Next:\*\*
 
-\- Days 5-7: staged pipeline, starting with extract\_requirements() on a pasted job posting
+\- Stage 2: match\_resume(), embed resume chunks via Bedrock and match against requirements (keyword-match fallback if not working by Day 7)
 
 
 
 \---
-
-
-
-
 
