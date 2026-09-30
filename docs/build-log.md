@@ -104,11 +104,45 @@
 
 
 
+\---------------------------------------------------------------------------------------------------------------------------
+
+
+
+\## \[2026-09-29] - Day 6
+
+
+
+\*\*Shipped:\*\*
+
+\- Wrote match\_resume.py, Stage 2 of the pipeline: embeds resume chunks and requirements via Titan Text Embeddings V2, scores every pair with cosine similarity, keeps the top 2 matching chunks per requirement
+
+\- Ran it end-to-end on job\_posting\_1.txt: scores correctly separated real resume content (Python/TypeScript 0.39, JavaScript 0.39, API integration 0.24) from content with no resume support (Aged Care Empathy 0.07)
+
+
+
+\*\*Learned:\*\*
+
+\- An embedding is a fixed-length array of floats regardless of input length, the model sets the length (dimensions), not the input
+
+\- Cosine similarity never sees the actual words, it only compares two number arrays geometrically; low score = wide angle = no overlapping meaning in the embedding space
+
+\- Explained why Aged Care Empathy scored lowest: no resume content shares meaning with it, so the vectors point in very different directions
+
+\- A skill-dense chunk (TECHNICAL SKILLS) wins most requirement matches by default since it's packed with content, worth splitting further in polish days for sharper matches
+
+\- Low absolute scores (under 0.4) are normal here, the relative gap between requirements matters more than the raw number
+
+\- Still to properly learn: the invoke\_model request/response shape (dimensions, normalize, parsing the body) that embed\_text() actually uses
+
+
+
 \*\*Next:\*\*
 
-\- Stage 2: match\_resume(), embed resume chunks via Bedrock and match against requirements (keyword-match fallback if not working by Day 7)
+\- Stage 3: score\_fit(), turn these match scores into a single 0-100 fit percentage, weighted toward must-have requirements
 
 
 
 \---
+
+
 
